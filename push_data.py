@@ -3,9 +3,17 @@ import sys
 import json
 
 from dotenv import load_dotenv
+from urllib.parse import quote_plus
 load_dotenv()
 
-MONGO_DB_URL=os.getenv("MONGO_DB_URL")
+MONGODB_ADMIN_USER = os.getenv("MONGODB_ADMIN_USER")
+MONGODB_ADMIN_PASSWORD = os.getenv("MONGODB_ADMIN_PASSWORD")
+
+username = quote_plus(str(MONGODB_ADMIN_USER))     # Encodes special chars safely
+password = quote_plus(str(MONGODB_ADMIN_PASSWORD)) # Encodes special chars safely
+
+MONGO_DB_URL=f"mongodb+srv://{username}:{password}@mongo-db-cluster.gnr2zgp.mongodb.net/?appName=mongo-db-cluster"
+
 print(MONGO_DB_URL)
 
 import certifi
@@ -49,8 +57,8 @@ class NetworkDataExtract():
             raise NetworkSecurityException(e,sys)
         
 if __name__=='__main__':
-    FILE_PATH="Network_Data\phisingData.csv"
-    DATABASE="KRISHAI"
+    FILE_PATH="./Network_Data/phishingData.csv"
+    DATABASE="NetworkSecurityDB"
     Collection="NetworkData"
     networkobj=NetworkDataExtract()
     records=networkobj.csv_to_json_convertor(file_path=FILE_PATH)

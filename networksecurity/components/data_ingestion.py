@@ -1,7 +1,6 @@
 from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logging.logger import logging
-
-
+from urllib.parse import quote_plus
 ## configuration of the Data Ingestion Config
 
 from networksecurity.entity.config_entity import DataIngestionConfig
@@ -16,7 +15,14 @@ from sklearn.model_selection import train_test_split
 from dotenv import load_dotenv
 load_dotenv()
 
-MONGO_DB_URL=os.getenv("MONGO_DB_URL")
+MONGODB_ADMIN_USER = os.getenv("MONGODB_ADMIN_USER")
+MONGODB_ADMIN_PASSWORD = os.getenv("MONGODB_ADMIN_PASSWORD")
+
+username = quote_plus(str(MONGODB_ADMIN_USER))     # Encodes special chars safely
+password = quote_plus(str(MONGODB_ADMIN_PASSWORD)) # Encodes special chars safely
+
+MONGO_DB_URL=f"mongodb+srv://{username}:{password}@mongo-db-cluster.gnr2zgp.mongodb.net/?appName=mongo-db-cluster"
+
 
 
 class DataIngestion:
@@ -46,6 +52,9 @@ class DataIngestion:
             raise NetworkSecurityException
         
     def export_data_into_feature_store(self,dataframe: pd.DataFrame):
+        """
+        export data into feature store
+        """
         try:
             feature_store_file_path=self.data_ingestion_config.feature_store_file_path
             #creating folder
