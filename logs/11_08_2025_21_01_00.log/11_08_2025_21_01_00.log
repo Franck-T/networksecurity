@@ -1,0 +1,7 @@
+[ 2025-11-08 21:01:13,247 ] 1025 httpx - INFO - HTTP Request: POST https://dagshub.com/login/oauth/middleman "HTTP/1.1 200 OK"
+[ 2025-11-08 21:01:13,464 ] 1025 httpx - INFO - HTTP Request: POST https://dagshub.com/login/oauth/access_token "HTTP/1.1 200 OK"
+[ 2025-11-08 21:01:13,473 ] 274 dagshub.auth.tokens - ERROR - Error while loading DagsHub token cache: Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/dagshub/auth/tokens.py", line 267, in _load_cache_file
+    with open(self.cache_location) as f:
+IsADirectoryError: [Errno 21] Is a directory: './.dagshub_cred'
+

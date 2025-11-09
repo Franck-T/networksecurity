@@ -11,6 +11,9 @@ down:
 check-main-file:
 	docker compose exec app cat /app/app/main.py
 
+restart:
+	docker compose down
+	docker compose up -d
 
 freeze:
 	docker compose run --rm app pip freeze > requirements.txt

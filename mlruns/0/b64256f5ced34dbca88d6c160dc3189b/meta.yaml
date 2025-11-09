@@ -1,0 +1,14 @@
+artifact_uri: file:///app/mlruns/0/b64256f5ced34dbca88d6c160dc3189b/artifacts
+end_time: 1762625307391
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b64256f5ced34dbca88d6c160dc3189b
+run_name: invincible-gnat-373
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762625305565
+status: 3
+tags: []
+user_id: root

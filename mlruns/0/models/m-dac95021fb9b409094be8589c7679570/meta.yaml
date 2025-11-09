@@ -1,0 +1,10 @@
+artifact_location: file:///app/mlruns/0/models/m-dac95021fb9b409094be8589c7679570/artifacts
+creation_timestamp: 1762624145674
+experiment_id: '0'
+last_updated_timestamp: 1762624146764
+model_id: m-dac95021fb9b409094be8589c7679570
+model_type: null
+name: model
+source_run_id: a26fdbbed0ca42e5a49031cbe84b00e2
+status: 2
+status_message: null

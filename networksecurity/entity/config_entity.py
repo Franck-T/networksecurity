@@ -11,9 +11,9 @@ class TrainingPipelineConfig:
         timestamp=timestamp.strftime("%m_%d_%Y_%H_%M_%S")
         self.pipeline_name=training_pipeline.PIPELINE_NAME
         self.artifact_name=training_pipeline.ARTIFACT_DIR
-        self.artifact_dir=os.path.join(self.artifact_name,timestamp)
+        self.artifact_dir=os.path.join(self.artifact_name,timestamp) #"11_08_2025_23_10_08") #"
         self.model_dir=os.path.join("final_model")
-        self.timestamp: str=timestamp
+        self.timestamp: str = timestamp
 
 
 

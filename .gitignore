@@ -1,2 +1,8 @@
 venv
 .env
+__pycache__/
+.ipynb_checkpoints
+docs/cmds.md
+docs/finalnetworksecurity.pdf
+.DS_Store
+.gitignore

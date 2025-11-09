@@ -1,0 +1,14 @@
+artifact_uri: file:///app/mlruns/0/a1734b8ea75544838642cf89fd40b10a/artifacts
+end_time: 1762625308542
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a1734b8ea75544838642cf89fd40b10a
+run_name: ambitious-zebra-664
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762625307436
+status: 3
+tags: []
+user_id: root

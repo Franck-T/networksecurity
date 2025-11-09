@@ -1,0 +1,69 @@
+# --- Python-specific ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.log
+
+# --- Virtual environments ---
+env/
+venv/
+ENV/
+.venv/
+
+# --- OS and editor junk ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# --- Notebooks and local experiments ---
+*.ipynb
+notebooks/
+experiments/
+
+# --- Git and CI/CD ---
+.git
+.gitignore
+.github/
+.gitlab/
+*.yml
+*.yaml
+
+# --- Environment and secrets ---
+.env
+.env.*
+secrets.json
+*.pem
+*.key
+
+# --- Docker-related ---
+docker-compose.yml
+Dockerfile*
+
+# --- Tests and coverage ---
+tests/
+.coverage
+htmlcov/
+pytest_cache/
+
+# --- Data and cache ---
+data/
+tmp/
+*.sqlite3
+*.db
+.cache/
+__pycache__/
+
+# --- Docs and misc ---
+*.md
+docs/
+
+# --- logs ---
+logs/
+
+# --- MLflow ---
+mlruns/

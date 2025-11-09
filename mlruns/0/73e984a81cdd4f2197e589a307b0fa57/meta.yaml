@@ -1,0 +1,14 @@
+artifact_uri: file:///app/mlruns/0/73e984a81cdd4f2197e589a307b0fa57/artifacts
+end_time: 1762625062969
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 73e984a81cdd4f2197e589a307b0fa57
+run_name: sneaky-fly-161
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762625061986
+status: 3
+tags: []
+user_id: root

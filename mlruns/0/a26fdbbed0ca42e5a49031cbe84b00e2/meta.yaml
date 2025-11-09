@@ -1,0 +1,14 @@
+artifact_uri: file:///app/mlruns/0/a26fdbbed0ca42e5a49031cbe84b00e2/artifacts
+end_time: 1762624146770
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a26fdbbed0ca42e5a49031cbe84b00e2
+run_name: able-grouse-869
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762624145642
+status: 3
+tags: []
+user_id: root

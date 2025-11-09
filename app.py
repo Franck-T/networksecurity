@@ -1,13 +1,11 @@
 import sys
 import os
 
+
 import certifi
 ca = certifi.where()
 
-from dotenv import load_dotenv
-load_dotenv()
-mongo_db_url = os.getenv("MONGODB_URL_KEY")
-print(mongo_db_url)
+
 import pymongo
 from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logging.logger import logging
@@ -25,10 +23,24 @@ from networksecurity.utils.main_utils.utils import load_object
 from networksecurity.utils.ml_utils.model.estimator import NetworkModel
 
 
-client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
+
 
 from networksecurity.constant.training_pipeline import DATA_INGESTION_COLLECTION_NAME
 from networksecurity.constant.training_pipeline import DATA_INGESTION_DATABASE_NAME
+
+from dotenv import load_dotenv
+from urllib.parse import quote_plus
+load_dotenv()
+
+MONGODB_ADMIN_USER = os.getenv("MONGODB_ADMIN_USER")
+MONGODB_ADMIN_PASSWORD = os.getenv("MONGODB_ADMIN_PASSWORD")
+
+username = quote_plus(str(MONGODB_ADMIN_USER))     # Encodes special chars safely
+password = quote_plus(str(MONGODB_ADMIN_PASSWORD)) # Encodes special chars safely
+
+MONGO_DB_URL=f"mongodb+srv://{username}:{password}@mongo-db-cluster.gnr2zgp.mongodb.net/?appName=mongo-db-cluster"
+
+client = pymongo.MongoClient(MONGO_DB_URL, tlsCAFile=ca)
 
 database = client[DATA_INGESTION_DATABASE_NAME]
 collection = database[DATA_INGESTION_COLLECTION_NAME]
@@ -86,3 +98,4 @@ async def predict_route(request: Request,file: UploadFile = File(...)):
     
 if __name__=="__main__":
     app_run(app,host="0.0.0.0",port=8000)
+    
