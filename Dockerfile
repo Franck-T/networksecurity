@@ -19,6 +19,6 @@ COPY hello.py /app
 
 #CMD ["python3", "app.py"]
 
-EXPOSE 8000
+EXPOSE 8080
 
 CMD ["python3", "hello.py"]
