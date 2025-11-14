@@ -5,4 +5,5 @@ __pycache__/
 docs/cmds.md
 docs/finalnetworksecurity.pdf
 .DS_Store
-.gitignore
+
+readme.md.old

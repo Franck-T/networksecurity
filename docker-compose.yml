@@ -5,23 +5,6 @@ services:
     build: .
     container_name: network-security
     env_file: .env
-    #environment:
-      # Avoid python buffering stdout/stderr
-      #- PYTHONUNBUFFERED=1
-      #- DAGSHUB_NO_INTERACTIVE=1
-      #- DAGSHUB_USER=${DAGSHUB_USER}
-      #- DAGSHUB_USER_TOKEN=${DAGSHUB_USER_TOKEN}
-      # Required by the app (fallbacks provided in .env)
-      # - GOOGLE_CLIENT_SECRETS=/app/credentials.json
-      # - OAUTH_REDIRECT_URI=${OAUTH_REDIRECT_URI}
-      # - TOKEN_BACKEND=${TOKEN_BACKEND}
-      # - TOKEN_DIR=/app/tokens
-      # # If using S3:
-      # - S3_BUCKET=${S3_BUCKET}
-      # - S3_PREFIX=${S3_PREFIX}
-      # - AWS_REGION=${AWS_REGION}
-      # - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      # - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     volumes:
       - .:/app
     ports:
